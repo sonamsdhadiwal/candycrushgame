@@ -3,14 +3,15 @@
   <h3>Score: {{ score }}</h3>
 
   <div class="grid">
-    <div
-      class="cell"
-      *ngFor="let candy of gameBoard; let i = index"
-    >
-       <div
-    class="candy"
-    [ngClass]="candy"
-  ></div>
+    <div class="cell" *ngFor="let candy of gameBoard; let i = index">
+      <div class="candy" 
+          [ngClass]="candy" 
+          draggable="true" 
+          (dragstart)="dragStart(i)" 
+          (dragover)="dragOver($event)"
+          (drop)="dragDrop(i)" 
+          (dragend)="dragEnd()">
+      </div>
     </div>
   </div>
 </div>
