@@ -1,0 +1,16 @@
+<div class="app">
+  <h1>Candy Crush 🍬</h1>
+  <h3>Score: {{ score }}</h3>
+
+  <div class="grid">
+    <div
+      class="cell"
+      *ngFor="let candy of gameBoard; let i = index"
+    >
+       <div
+    class="candy"
+    [ngClass]="candy"
+  ></div>
+    </div>
+  </div>
+</div>
